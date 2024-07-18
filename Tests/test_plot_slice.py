@@ -1,13 +1,10 @@
 import pytest
 import os
 import sys
-# 将ATHENApp_plot_tool文件夹添加到Python路径中
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '../ATHENApp_plot_tool')))
-# 假设main函数在plot_slice模块中
 from plot_slice import main
 
 def test_plot_slice():
-    # 测试参数
     args = {
         'data_file': 'disk.out2.00800.athdf',
         'quantity': 'rho',
@@ -36,12 +33,10 @@ def test_plot_slice():
         'format': 'png'
     }
 
-    # 运行main函数
+    # Run main function
     main(**args)
 
-    # 检查输出文件是否创建
     assert os.path.exists(args['output_file'])
 
-# 运行所有测试
 if __name__ == '__main__':
     pytest.main()
