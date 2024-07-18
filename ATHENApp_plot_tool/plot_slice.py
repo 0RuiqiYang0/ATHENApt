@@ -1,5 +1,3 @@
-#! /usr/bin/env python
-
 """
 Script for plotting 2D data or 2D slices of 3D data, intended primarily for
 Cartesian grids.
@@ -24,7 +22,6 @@ import numpy as np
 
 # Athena++ modules
 import athena_read
-
 
 # Main function
 def main(**kwargs):
@@ -216,8 +213,7 @@ def main(**kwargs):
         norm = colors.Normalize(v_min, v_max)
 
     # Make plot
-    # should make the size editable?
-    fig = plt.figure(1, figsize=(12, 12))
+    fig = plt.figure(figsize=(kwargs['fig_width'], kwargs['fig_height']), dpi=kwargs['dpi'])
     ax = fig.add_subplot(1,1,1,projection=projection_type)
     if projection_type == 'polar':
         # switch axis for radial and azimuthal
@@ -257,7 +253,7 @@ def main(**kwargs):
     if kwargs['output_file'] == 'show':
         fig.show()
     else:
-        fig.savefig(kwargs['output_file'], bbox_inches='tight')
+        fig.savefig(kwargs['output_file'], bbox_inches='tight', format=kwargs['format'])
 
 
 # Execute main function
@@ -346,5 +342,20 @@ if __name__ == '__main__':
                         type=int,
                         default=0,
                         help=('Include number of ghost cells in each direction'))
+    parser.add_argument('-fig_width',
+                        type = float,
+                        default = 12.0,
+                        help ='width of the figure in inches')
+    parser.add_argument('-fig_height',
+                        type = float,
+                        default = 12.0,
+                        help = 'height of the figure in inches')
+    parser.add_argument('-dpi',
+                        type = int,
+                        default = 100,
+                        help = 'dots per inch(DPI) of the output plot')
+    parser.add_argument('-format',
+                        default ='png',
+                        help ='output file format(e.g., png, jpg, tif)')
     args = parser.parse_args()
     main(**vars(args))
