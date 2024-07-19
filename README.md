@@ -5,6 +5,10 @@ This package takes a 2D color plot of a single quantity from an Athena++ `.athdf
 ## Installation
 
 ## Example
+<div align="center">
+  <img src="Tests/test_out.png">
+</div>
+
 
 ---------------------------------
 ## Collaborator
