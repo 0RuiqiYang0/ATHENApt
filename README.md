@@ -4,6 +4,8 @@ This package takes a 2D color plot of a single quantity from an Athena++ `.athdf
 
 Usage: `plot_lines.py <data_files> <x_names> <y_names> <output_file> [<options>]`
 
+Arguments introduction can be find at <a href="https://github.com/PrincetonUniversity/athena/wiki/Plotting-Scripts#plot_slicepy">athena++ plotting scripts</a>
+
 Additional arguments to the original scripts:
 
 `-fig_width`: width of the figure in inches
