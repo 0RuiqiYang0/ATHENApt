@@ -1,0 +1,14 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+setup.py
+ATHENApp_plot_tool/__init__.py
+ATHENApp_plot_tool/athena_read.py
+ATHENApp_plot_tool/plot_slice.py
+ATHENApp_plot_tool.egg-info/PKG-INFO
+ATHENApp_plot_tool.egg-info/SOURCES.txt
+ATHENApp_plot_tool.egg-info/dependency_links.txt
+ATHENApp_plot_tool.egg-info/requires.txt
+ATHENApp_plot_tool.egg-info/top_level.txt
+tests/test_plot_slice.py
