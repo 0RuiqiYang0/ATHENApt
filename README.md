@@ -18,7 +18,7 @@ Additional arguments to the original scripts:
 
 ## Installation
 ```
-
+pip install ATHENApt==0.0.5
 ```
 
 ## Example
