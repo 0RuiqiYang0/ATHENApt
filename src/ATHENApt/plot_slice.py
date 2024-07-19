@@ -25,6 +25,8 @@ sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 # Athena++ modules
 import athena_read
 
+from datetime import datetime
+
 # Main function
 def main(**kwargs):
 
@@ -214,6 +216,9 @@ def main(**kwargs):
     else:
         norm = colors.Normalize(v_min, v_max)
 
+    # Get current date
+    date_str = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+
     # Make plot
     fig = plt.figure(figsize=(kwargs['fig_width'], kwargs['fig_height']), dpi=kwargs['dpi'])
     ax = fig.add_subplot(1,1,1,projection=projection_type)
@@ -247,7 +252,23 @@ def main(**kwargs):
         ax.set_xlabel(x_label)
         ax.set_ylabel(y_label)
 
-    fig.colorbar(im)
+    # Conditionally add title
+    title = kwargs.get('title')
+    quantity_info = kwargs['quantity']  # Use `kwargs['quantity']` directly, which could be None
+    info_lines = []
+    if title:
+        info_lines.append(title)
+
+    if info_lines:
+        ax.set_title('\n'.join(info_lines), fontsize=kwargs.get('title_fontsize', 13))
+
+    # Add author and date to the bottom left corner
+    author = kwargs.get('author')
+    if author:
+        fig.text(0.1, 0.12, f'Author: {author}', fontsize=12, ha='left')
+    fig.text(0.1, 0.1, f'Date: {date_str}', fontsize=12, ha='left')
+
+    fig.colorbar(im).set_label(f'{quantity_info}')
 
     if not kwargs['fill']:
         ax.set_aspect('equal')
@@ -256,7 +277,6 @@ def main(**kwargs):
         fig.show()
     else:
         fig.savefig(kwargs['output_file'], bbox_inches='tight', format=kwargs['format'])
-
 
 # Execute main function
 if __name__ == '__main__':
@@ -356,6 +376,19 @@ if __name__ == '__main__':
                         type = int,
                         default = 100,
                         help = 'dots per inch(DPI) of the output plot')
+    parser.add_argument('-q', '--quantity',
+                        default=None,
+                        help='Name of quantity to be plotted')
+    parser.add_argument('--title_fontsize',
+                        type=int,
+                        default=13,
+                        help='Font size for the title')
+    parser.add_argument('--author',
+                        default=None,
+                        help='Name of the author')
+    parser.add_argument('--title',
+                        default=None,
+                        help='Title of the plot')
     parser.add_argument('-format',
                         default ='png',
                         help ='output file format(e.g., png, jpg, tif)')
