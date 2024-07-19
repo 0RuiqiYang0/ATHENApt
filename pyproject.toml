@@ -5,9 +5,9 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name ="ATHENApt"
-version ="0.0.1"
+version ="0.0.4"
 
-description = "This is a Python package for ATHENA++ visualization inspred by ATHENA++ plotting scripts"
+description = "This is a complementary Python package for ATHENA++ visualization inspred by ATHENA++ plotting scripts. More test examples and .athdf files for test, please visit package Home-page."
 authors = [
     { name = "Ruiqi Yang" },
     { name = "Xiaoyuan Yang" },
@@ -20,4 +20,4 @@ requires-python = ">=3.6"
 dependencies=["numpy","matplotlib"]
 
 [project.urls]
-Homepage = "https://github.com/0RuiqiYang0/ATHENApp_plot_tool"
+Homepage = "https://github.com/0RuiqiYang0/ATHENApt"
