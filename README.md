@@ -23,8 +23,8 @@ Additional arguments to the original scripts:
 
 ## Example
 ```
-python3 ATHENApp_plot_tool/plot_slice.py Tests/disk.out2.00800.athdf rho
-test_out.png --colormap viridis --vmin 0.0 --vmax 0.2 --x_min=1.0 --x_max=70.0 -dpi 200
+python -m ATHENApt.plot_slice disk.out2.00800.athdf vel1 test_plot_vel.png
+--direction 3 --x_min 1.0 --x_max 10.0 --vmin 0 --vmax 0.8 -fig_width 12.0 -fig_height 12.0 -dpi 300
 ```
 <div align="center">
   <img src="tst/test_out.png">
