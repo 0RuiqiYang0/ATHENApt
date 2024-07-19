@@ -4,7 +4,7 @@ requires = ["setuptools >= 61.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name ="ATHENApp_plot_tool"
+name ="ATHENApt"
 version ="0.0.1"
 
 description = "This is a Python package for ATHENA++ visualization inspred by ATHENA++ plotting scripts"
@@ -16,11 +16,6 @@ authors = [
 license = { text = "GPL-3.0" }
 readme = "README.md"
 requires-python = ">=3.6"
-classifiers = [
-    "Programming Language :: Python :: 3",
-    "License :: OSI Approved :: MIT License",
-    "Operating System :: OS Independent",
-]
 
 dependencies=["numpy","matplotlib"]
 
