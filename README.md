@@ -27,7 +27,7 @@ python3 ATHENApp_plot_tool/plot_slice.py Tests/disk.out2.00800.athdf rho
 test_out.png --colormap viridis --vmin 0.0 --vmax 0.2 --x_min=1.0 --x_max=70.0 -dpi 200
 ```
 <div align="center">
-  <img src="Tests/test_out.png">
+  <img src="tst/test_out.png">
 </div>
 
 
