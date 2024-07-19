@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name ="ATHENApt"
-version ="0.0.4"
+version ="0.0.5"
 
 description = "This is a complementary Python package for ATHENA++ visualization inspred by ATHENA++ plotting scripts. More test examples and .athdf files for test, please visit package Home-page."
 authors = [
