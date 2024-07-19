@@ -8,17 +8,26 @@ Arguments introduction can be found at <a href="https://github.com/PrincetonUniv
 
 Additional arguments to the original scripts:
 
-`-fig_width`: width of the figure in inches
+`--fig_width`: width of the figure in inches
 
-`-fig_height`: height of teh figure in inches
+`--fig_height`: height of teh figure in inches
 
-`-dpi`: dots per inch(DPI) of the output plot
+`--dpi`: dots per inch(DPI) of the output plot
 
-`-format`: output file format(e.g., png, jpg, tif)
+`--format`: output file format(e.g., png, jpg, tif)
+
+`-q`,`--quantity`: Name of quantity to be plotted
+
+`--title_fontsize`: Font size for the title
+
+`--author`: Name of the author
+
+`--title`: Title of the plot
 
 ## Installation
 ```
-pip install ATHENApt==0.0.5
+pip install ATHENApt
+pip install --upgrade ATHENApt #download the latest version
 ```
 
 ## Example
